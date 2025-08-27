@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=TASA+Explorer:wght@400..800&display=swap');
+
+body{
+  font-family: "TASA Explorer", sans-serif;
+  margin: 0;
+}
+
+.home{
+  display: grid;
+  grid-template-rows: 1fr 0.1fr 1fr;
+  justify-items: center;
+}
+
+.header{
+  grid-row: 1;
+  height: 500px;
+  text-align: center;
+  margin-top: 50px;
+  color: rgb(7, 57, 4);
+}
+.title{
+  font-size: 50px;
+}
+
+.introduce{
+  margin-bottom: 40px;
+  font-size: 20px;
+  color: rgb(52, 6, 88);
+}
+
+.header img{
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  border: none;
+}
+
+.selectText{
+  display: grid;
+  grid-row: 2;
+  color: rgb(52, 6, 88);
+}
+
+.chartOptions{
+  display: grid;
+  grid-row: 3;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 5px;
+  gap: 20px;
+}
+
+.chartOptions :nth-child(odd){
+  background-color:rgb(52, 6, 88);
+}
+
+.chartOptions :nth-child(even){
+  background-color:rgb(7, 57, 4);
+}
+
+.card{
+  display: grid;
+  grid-template-rows: 80px 300px 100px;
+  width: 500px;
+  height: 500px;
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+  text-align: center;
+  justify-items: center;
+}
+
+.card h2{
+  grid-row: 1;
+}
+
+.card img{
+  grid-row: 2;
+  width: 300px;
+  height: 280px;
+  border-radius: 10px;
+  border: none;
+}
+
+.goButton{
+  grid-row: 3;
+  width: 200px;
+  height: 80px;
+  align-self: center;
+}
