@@ -1,51 +1,52 @@
 @import url('https://fonts.googleapis.com/css2?family=TASA+Explorer:wght@400..800&display=swap');
 
-body{
+body {
   font-family: "TASA Explorer", sans-serif;
   margin: 0;
 }
 
-.home{
+.home {
   display: grid;
   grid-template-rows: 0.3fr 0.1fr 1fr;
   justify-items: center;
-  background-color: #16048d
+  background-color: #16048d;
 }
 
-.header{
+.header {
   grid-row: 1;
   width: 100%;
   height: 600px;
   text-align: center;
   color: #fff;
-  background-image: url('https://img.freepik.com/fotos-premium/concepto-crecimiento-economia-mercado-divisas-azul-digital-que-sube-diagrama-grafico-financiero-graficos-sobre-fondo-oscuro-abstracto-renderizado-3d-mapa-mundial_670147-39996.jpg');
+  background-image: url('./background.avif');
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
 }
-.title{
+
+.title {
   font-size: 50px;
 }
 
-.introduce{
+.introduce {
   margin-bottom: 40px;
   font-size: 20px;
   color: #fff
 }
 
-.header img{
+.header img {
   width: 300px;
   height: 300px;
   border-radius: 10px;
   border: none;
 }
 
-.selectText{
+.selectText {
   display: grid;
   grid-row: 2;
   color: #fff
 }
 
-.chartOptions{
+.chartOptions {
   display: grid;
   grid-row: 3;
   grid-template-columns: repeat(2, 1fr);
@@ -53,7 +54,8 @@ body{
   gap: 50px;
   margin-bottom: 50px;
 }
-.card{
+
+.card {
   display: grid;
   grid-template-rows: 80px 300px 100px;
   width: 500px;
@@ -61,7 +63,7 @@ body{
   border-radius: 10px;
   border: none;
   color: #F4F0EA;
-  background-color: rgb(52, 6, 88);;
+  background-color: rgb(52, 6, 88);
   text-align: center;
   justify-items: center;
   box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.144);
@@ -71,11 +73,11 @@ body{
   animation-range: entry 10% cover 30%;
 }
 
-.card h2{
+.card h2 {
   grid-row: 1;
 }
 
-.card img{
+.card img {
   grid-row: 2;
   width: 300px;
   height: 280px;
@@ -83,7 +85,7 @@ body{
   border: none;
 }
 
-.card .goButton{
+.card .goButton {
   grid-row: 3;
   width: 250px;
   height: 60px;
@@ -94,22 +96,291 @@ body{
   font-size: 20px;
 }
 
-.card .goButton:hover{
+.card .goButton:hover {
   animation: buttonHover 1s linear both;
 }
 
 
-@keyframes buttonHover{
-  to{
+/* Charts */
+.areaChart {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 80px 1fr;
+  justify-items: center;
+}
+
+.Navbar {
+  grid-column: 1/-1;
+  grid-row: 1;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  background-color: #340658;
+  width: 100%;
+}
+
+.Navbar h1 {
+  justify-self: center;
+  color: #fff;
+}
+
+.Navbar button {
+  border-radius: 10px;
+  width: 200px;
+  height: 40px;
+  justify-self: end;
+  align-self: center;
+  background-color: #b2f40c;
+  border: none;
+  font-family: 'TASA Explorer', sans-serif;
+  font-size: 16px;
+  margin-right: 50px;
+}
+
+.Navbar button:hover {
+  animation: backButtonHover 1s linear both;
+}
+
+.leftSide {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 80px 1fr 500px;
+  grid-column: 1;
+  grid-row: 2;
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  border: 1px solid #16048d;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.leftSide h2 {
+  grid-row: 1;
+  grid-column: 1/ -1;
+  background-color: #16048d;
+  border-radius: 10px;
+  color: #fff;
+  align-self: center;
+  height: 50px;
+}
+
+.leftSide h4 {
+  background-color: #b2f40c;
+  border-radius: 10px;
+  color: #1f1f1f;
+  width: 250px;
+  justify-self: center;
+}
+
+#valuesY {
+  justify-self: center;
+  align-self: center;
+  grid-column: 1;
+  grid-row: 2;
+  width: 350px;
+  height: 200px;
+  font-size: 20px;
+  font-family: "TASA Explorer", sans-serif;
+  resize: none;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+#valuesX {
+  justify-self: center;
+  align-self: center;
+  grid-column: 2;
+  grid-row: 2;
+  width: 350px;
+  height: 200px;
+  font-size: 20px;
+  font-family: "TASA Explorer", sans-serif;
+  resize: none;
+  border-radius: 10px;
+}
+
+.background {
+  width: 300px;
+  grid-column: 1;
+  grid-row: 3;
+  align-self: center;
+  justify-self: center;
+}
+
+.line {
+  align-self: center;
+  justify-self: center;
+  width: 300px;
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.lineBar {
+  align-self: center;
+  justify-self: center;
+  width: 300px;
+  grid-column: 1/-1;
+  grid-row: 3;
+}
+
+.backgroundPie {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 80px 1fr;
+  grid-column: 1/-1;
+  grid-row: 3;
+}
+
+.backgroundPie button {
+  grid-column: 2;
+  grid-row: 1;
+  width: 150px;
+  height: 80px;
+  border-radius: 10px;
+  border: none;
+  background-color: #16048d;
+  color:#fff;
+  font-family: 'TASA Explorer', sans-serif;
+  font-size: 20px;
+}
+
+.backgroundPie button:hover{
+  animation: buttonHoverDownload 1s linear both;
+}
+
+.backgroundPie .selectChart {
+  grid-column: 2;
+  grid-row: 1;
+  width: 150px;
+  height: 80px;
+  margin-left: 200px;
+  background-color: #340658;
+}
+
+.colorPicker {
+  justify-self: center;
+  align-self: center;
+  grid-column: 1;
+  grid-row: 1/ -1;
+  width: 325px;
+}
+
+#colorsRGB {
+  justify-self: center;
+  align-self: center;
+  grid-column: 2;
+  grid-row: 2;
+  width: 350px;
+  height: 300px;
+  font-size: 20px;
+  font-family: "TASA Explorer", sans-serif;
+  resize: none;
+  border-radius: 10px;
+}
+
+.rightSide {
+  display: grid;
+  width: 700px;
+  grid-template-rows: 80px 1fr 200px;
+  grid-column: 2;
+  grid-row: 2;
+  background-color: #fff;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.rightSide input {
+  width: 500px;
+  height: 45px;
+  justify-self: center;
+  align-self: center;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid #000;
+  grid-row: 1;
+}
+
+.rightSide canvas {
+  justify-self: center;
+  width: 700px;
+  height: 200px;
+  box-sizing: none;
+  grid-row: 2;
+}
+
+.download {
+  display: grid;
+  grid-row: 3;
+  grid-template-rows: 1fr 130px;
+  justify-items: center;
+  align-self: center;
+  margin-bottom: 100px;
+}
+
+.download img {
+  width: 350px;
+  height: 250px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+.download button {
+  border-radius: 10px;
+  width: 500px;
+  height: 80px;
+  background-color: #340658;
+  color: #fff;
+  font-family: 'TASA Explorer', sans-serif;
+  font-size: 20px;
+}
+
+.download button:hover {
+  animation: buttonHoverDownload 1s linear both;
+}
+
+/* Pie Chart */
+
+.downloadPie button{
+  margin-left: 100px;
+  border-radius: 10px;
+  width: 500px;
+  height: 80px;
+  background-color: #340658;
+  color: #fff;
+  font-family: 'TASA Explorer', sans-serif;
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+@keyframes buttonHover {
+  to {
     background-color: #b2f40c;
   }
 }
 
-@keyframes cardsDown{
-  0%{
+@keyframes buttonHoverDownload {
+  to {
+    color: #1f1f1f;
+    background-color: #b2f40c;
+  }
+}
+
+@keyframes backButtonHover {
+  to {
+    width: 350px;
+  }
+}
+
+@keyframes cardsDown {
+  0% {
     opacity: 0;
   }
-  100%{
+
+  100% {
     opacity: 1;
   }
 }

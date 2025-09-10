@@ -12,14 +12,14 @@ function Home() {
                 <h2>Select one and hands to work</h2>
             </div>
             <div className="chartOptions">
-                <Card title={'Area Chart'} image={'./area.png'}/>
-                <Card title={'Bar Chart'} image={'./bar.png'}/>
-                <Card title={'Doughnut and Pie Charts'} image={'./pie.png'}/>
-                <Card title={'Line Chart'} image={'./line.png'}/>
-                <Card title={'Polar Area Chart'} image={'./polar.png'}/>
-                <Card title={'Radar Chart'} image={'./radar.png'}/>
-                <Card title={'Scatter Chart'} image={'./scatter.png'}/>
-                <Card title={'Bubble Chart'} image={'./bubble.png'}/>
+                <Card id={'area'} title={'Area Chart'} image={'./area.png'}/>
+                <Card id={'bar'} title={'Bar Chart'} image={'./bar.png'}/>
+                <Card id={'pie'} title={'Doughnut and Pie Charts'} image={'./pie.png'}/>
+                <Card id={'line'} title={'Line Chart'} image={'./line.png'}/>
+                <Card id={'polar'} title={'Polar Area Chart'} image={'./polar.png'}/>
+                <Card id={'radar'} title={'Radar Chart'} image={'./radar.png'}/>
+                <Card id={'scatter'} title={'Scatter Chart'} image={'./scatter.png'}/>
+                <Card id={'bubble'} title={'Bubble Chart'} image={'./bubble.png'}/>
             </div>
         </div>
     )
