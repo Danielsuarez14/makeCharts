@@ -6,12 +6,14 @@ import "react-color-palette/css"
 import { useNavigate } from 'react-router-dom';
 
 function BarChart() {
-    const [title, setTitle] = useState('Title')
-    const [valuesY, setValuesY] = useState('65\n59\n80')
-    const [valuesX, setValuesX] = useState('Enero\nFebrero\nMarzo')
-    const [valuesBorder, setValuesBorder] = useState('rgba(15, 73, 0, 1)\nrgba(214, 124, 33, 1)\nrgba(17, 41, 112, 1)')
+    const [title, setTitle] = useState('Top 10 marcas de automoviles mas vendidas en Colombia(2024)')
+    const [valuesY, setValuesY] = useState('27023\n25339\n24251\n19605\n17968\n12211\n10814\n8220\n7206\n7128')
+    const [valuesX, setValuesX] = useState('Toyota\nRenault\nKia\nChevrolet\nMazda\nNissan\nSuzuki\nVolkswagen\nHyundai\nFord')
+    const [valuesBorder, setValuesBorder] = useState('rgba(235, 10, 30, 1)\nrgba(255, 209, 0, 1)\nrgba(200, 16, 46, 1)\nrgba(204, 158, 47, 1)\nrgba(33, 33, 33, 1)\nrgba(195, 0, 47, 1)\nrgba(13, 91, 166, 1)\nrgba(10, 59, 121, 1)\nrgba(0, 45, 110, 1)\nrgba(0, 52, 120, 1)')
     const [values, setValues] = useState([])
     const [labels, setLabels] = useState([])
+    const [titleY, setTitleY] = useState('Automoviles vendidos')
+    const [titleX, setTitleX] = useState('Marcas')
     const [colors, setColors] = useState([])
     const [borders, setBorders] = useState([])
     const [borderColor, setBorderColor] = useColor("rgb(15, 73, 0)");
@@ -37,7 +39,20 @@ function BarChart() {
             mode: 'index',
             intersect: false,
         },
-        scales: { y: { beginAtZero: true } },
+        scales: {
+            y: {
+                title: {
+                    display: true,
+                    text: titleY
+                }
+            },
+            x: {
+                title: {
+                    display: true,
+                    text: titleX
+                }
+            }
+        },
         plugins: { legend: { display: false }, title: { display: true, text: title } }
     }
 
@@ -73,7 +88,6 @@ function BarChart() {
         setLabels(valuesX.split('\n').filter(l => l !== ''))
         setBorders(valuesBorder.split('\n').filter(l => l !== ''))
         updateBackground(valuesBorder)
-        console.log(valuesBorder.split('\n').filter(l => l !== '').length === valuesX.split('\n').filter(l => l !== '').length ? colors : `${colors[0]}`)
     }, [valuesY, valuesX, borderColor, valuesBorder])
 
 
@@ -85,6 +99,12 @@ function BarChart() {
             </div>
             <div className='leftSide'>
                 <h2>Make your own graphic</h2>
+                <div className='titleY'>
+                    <input type="text" value={titleY} onChange={v => setTitleY(v.target.value)}/>
+                </div>
+                <div className='titleX'>
+                    <input type="text" value={titleX} onChange={v => setTitleX(v.target.value)}/>
+                </div>
                 <div>
                     <h4>Values Y-Axis</h4>
                     <textarea value={valuesY} onChange={a => setValuesY(a.target.value)} id="valuesY" />

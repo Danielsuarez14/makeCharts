@@ -1,20 +1,19 @@
-import { Pie, Doughnut } from 'react-chartjs-2';
+import {PolarArea } from 'react-chartjs-2';
 import 'chart.js/auto';
 import { useEffect, useRef, useState } from 'react';
 import { ColorPicker, useColor } from "react-color-palette";
 import "react-color-palette/css"
 import { useNavigate } from 'react-router-dom';
 
-function PieChart() {
+function PolarAreaChart() {
     const [title, setTitle] = useState('Top 5 marcas de automoviles mas vendidas en Colombia(2024)')
     const [valuesY, setValuesY] = useState('27023\n25339\n24251\n19605\n17968')
     const [valuesX, setValuesX] = useState('Toyota\nRenault\nKia\nChevrolet\nMazda')
     const [valuesColor, setValuesColor] = useState('rgba(235, 10, 30, 1)\nrgba(255, 209, 0, 1)\nrgba(200, 16, 46, 1)\nrgba(204, 158, 47, 1)\nrgba(33, 33, 33, 1)')
     const [values, setValues] = useState([])
-    const [labels, setLabels] = useState([])
+    const [labels, setLabels] = useState([]) 
     const [colors, setColors] = useState([])
     const [color, setColor] = useColor("rgba(15, 73, 0, 1)")
-    const [pie, setPie] = useState(true)
     const chartRef = useRef(null)
     const navigate = useNavigate()
     const data = {
@@ -59,7 +58,7 @@ function PieChart() {
     return (
         <div className='areaChart'>
             <div className='Navbar'>
-                <h1 className='titleArea'>Pie and Doughnut Chart Page</h1>
+                <h1 className='titleArea'>Polar Area Chart</h1>
                 <button onClick={() => navigate('/')}>Back</button>
             </div>
             <div className='leftSide'>
@@ -77,7 +76,6 @@ function PieChart() {
                         <h4>Line color</h4>
                         <ColorPicker color={color} onChange={setColor} />
                     </div>
-                    <button onClick={() => setPie(!pie)} className='selectChart'>{pie ? 'Doughnut' : 'Pie'}</button>
                     <button onClick={() => setValuesColor(prev => `${prev}\n${`rgba(${Math.round(color.rgb.r)}, ${Math.round(color.rgb.g)}, ${Math.round(color.rgb.b)}, ${Math.round(color.rgb.a)})`}`)}
                     >Put Color</button>
                     <div>
@@ -89,12 +87,7 @@ function PieChart() {
             </div>
             <div className='rightSide'>
                 <input type="text" value={title} onChange={a => update(a.target.value)} />
-                {pie && (
-                    <Pie className='pieChart' data={data} options={options} ref={chartRef} />
-                )}
-                {!pie && (
-                    <Doughnut className='pieChart' data={data} options={options} ref={chartRef} />
-                )}
+                    <PolarArea data={data} options={options} ref={chartRef} />
                 <div className='downloadPie'>
                     <button onClick={() => createImage()}>Download</button>
                 </div>
@@ -104,4 +97,4 @@ function PieChart() {
     )
 }
 
-export default PieChart
+export default PolarAreaChart

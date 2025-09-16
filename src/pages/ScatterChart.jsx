@@ -1,40 +1,35 @@
-import { Line } from 'react-chartjs-2';
+import { Scatter } from 'react-chartjs-2';
 import 'chart.js/auto';
 import { useEffect, useRef, useState } from 'react';
 import { ColorPicker, useColor } from "react-color-palette";
 import "react-color-palette/css"
 import { useNavigate } from 'react-router-dom';
 
-function AreaChart() {
-    const [title, setTitle] = useState('TRM COP por USD en septiembre del año 2025')
-    const [valuesY, setValuesY] = useState('4018.41\n4016.94\n4002.86\n3991.09\n3960.94\n3960.94\n3960.94\n3945.29\n3919.13\n3921.58')
-    const [valuesX, setValuesX] = useState('02\n03\n04\n05\n06\n07\n08\n09\n10\n11')
+function ScatterChart() {
+    const [title, setTitle] = useState('OMS: Peso (kg) vs Talla (cm) — Niños 2–5 años, percentil 50')
+    const [valuesY, setValuesY] = useState('65\n68\n70\n72\n74\n76\n78\n80\n82\n84')
+    const [valuesX, setValuesX] = useState('7.4\n8.1\n8.6\n9.0\n9.4\n9.8\n10.2\n10.6\n11.0\n11.4')
     const [values, setValues] = useState([])
     const [labels, setLabels] = useState([])
-    const [titleY, setTitleY] = useState('Pesos Colombianos')
-    const [titleX, setTitleX] = useState('Dias')
-    const [color, setColor] = useColor("rgb(10, 196, 50, 0.123)");
-    const [borderColor, setBorderColor] = useColor("rgba(17, 67, 4, 1)");
+    const [titleY, setTitleY] = useState('Talla')
+    const [titleX, setTitleX] = useState('Peso')
+    const pairs = []
+    const [color, setColor] = useColor("rgba(17, 67, 4, 1)");
+
     const chartRef = useRef(null)
     const navigate = useNavigate()
     const data = {
-        labels: labels,
         datasets: [{
             label: title,
-            data: values,
-            fill: 'origin',
-            backgroundColor: `rgba(${color.rgb.r},${color.rgb.g},${color.rgb.b},${color.rgb.a})`,
-            borderColor: `rgba(${borderColor.rgb.r}, ${borderColor.rgb.g},${borderColor.rgb.b},${borderColor.rgb.a})`,
-            tension: 0.1,
-            pointRadius: 0,
+            data: pairs,
+            backgroundColor: `rgba(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b}, ${color.rgb.a})`,
         }]
     }
     const options = {
         interaction: {
             mode: 'index',
-            intersect: false,
-        },
-        scales: {
+            intersect: true,
+        },scales: {
             y: {
                 title: {
                     display: true,
@@ -65,16 +60,33 @@ function AreaChart() {
 
     }
 
+    const makePairs = () => {
+        let dictionary = {}
+        if(labels.length === values.length){
+            for (let i = 0; i <= values.length - 1; i++){
+            dictionary = {'x': parseFloat(labels[i]), 'y': parseFloat(values[i])}
+            pairs.push(dictionary)
+        }
+        return pairs
+        }
+        
+    }
+
+
     useEffect(() => {
-        setValues(valuesY.split('\n'))
-        setLabels(valuesX.split('\n'))
+        setValues(valuesY.split('\n').filter(l => l !== ''))
+        setLabels(valuesX.split('\n').filter(l => l !== ''))
     }, [valuesY, valuesX, color])
+
+    useEffect (() => {
+        makePairs()
+    },[labels, values])
 
 
     return (
         <div className='areaChart'>
             <div className='Navbar'>
-                <h1 className='titleArea'>Area Chart Page</h1>
+                <h1 className='titleArea'>Scatter Chart Page</h1>
                 <button onClick={() => navigate('/')}>Back</button>
             </div>
             <div className='leftSide'>
@@ -93,18 +105,16 @@ function AreaChart() {
                     <h4>Values X-Axis</h4>
                     <textarea value={valuesX} onChange={a => setValuesX(a.target.value)} id="valuesX" />
                 </div>
-                <div className='background'>
-                    <h4>Background color</h4>
-                    <ColorPicker color={color} onChange={setColor} />
-                </div>
-                <div className='line'>
-                    <h4>Line color</h4>
-                    <ColorPicker color={borderColor} onChange={setBorderColor} />
+                <div className='backgroundPie'>
+                    <div className='colorPicker'>
+                        <h4>Point color</h4>
+                        <ColorPicker color={color} onChange={setColor} />
+                    </div>
                 </div>
             </div>
             <div className='rightSide'>
                 <input type="text" value={title} onChange={a => update(a.target.value)} />
-                <Line className='areaLine' data={data} options={options} ref={chartRef} />
+                <Scatter redraw className='areaLine' data={data} options={options} ref={chartRef} />
                 <div className='download'>
                     <img src="./downloadChart.jpg" alt="download" />
                     <button onClick={() => createImage()}>Download</button>
@@ -115,4 +125,6 @@ function AreaChart() {
     )
 }
 
-export default AreaChart
+
+
+export default ScatterChart

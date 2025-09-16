@@ -19,7 +19,6 @@ function Home() {
                 <Card id={'polar'} title={'Polar Area Chart'} image={'./polar.png'}/>
                 <Card id={'radar'} title={'Radar Chart'} image={'./radar.png'}/>
                 <Card id={'scatter'} title={'Scatter Chart'} image={'./scatter.png'}/>
-                <Card id={'bubble'} title={'Bubble Chart'} image={'./bubble.png'}/>
             </div>
         </div>
     )
