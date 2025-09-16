@@ -18,7 +18,7 @@ body {
   height: 600px;
   text-align: center;
   color: #fff;
-  background-image: url('./background.avif');
+  background-image: url('./background.png');
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
 }
@@ -27,11 +27,23 @@ body {
   font-size: 50px;
 }
 
-.introduce {
+.introduce{
+  height: 40px;
+}
+
+.introduce p{
+  overflow: hidden;
   margin-bottom: 40px;
   font-size: 20px;
-  color: #fff
+  color: #fff;
+  border-right: #b2f40c;
+  margin: 0 auto;
+  white-space: nowrap;
+
+  animation: typing 10s steps(120, end), blink .5s step-end infinite;
 }
+
+
 
 .header img {
   width: 300px;
@@ -39,6 +51,12 @@ body {
   border-radius: 10px;
   border: none;
 }
+
+.header img:hover{
+  transform: rotateY(360deg);
+  transition: 5s;
+}
+
 
 .selectText {
   display: grid;
@@ -427,5 +445,23 @@ body {
 
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes typing{
+  from{
+    width: 0;
+  }
+  to{
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  from, to {
+    border-color: transparent;
+  }
+  50%{
+    border-color: orange;
   }
 }
