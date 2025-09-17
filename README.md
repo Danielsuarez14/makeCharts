@@ -1,6 +1,7 @@
 # Make Charts
 This web was maked with Vite, React, ChartJ, use-sound and react-color-palette
 If you want to visit the web, click this link https://makecharts.netlify.app/
+
 For now the web is only to pc, I am working to make responsive it.
 
 
