@@ -6,7 +6,7 @@ function Home() {
             <div className="header">
                 <h1 translate="no" className="title">Make Charts</h1>
                 <div className="introduce">
-                    <p>Don't worry about making charts, Make Charts is very intuitive and your charts will look great</p>
+                     Don't worry about making charts,          Make Charts is very intuitive and your charts will look great
                 </div>
 
                 <img src='./player.png' alt="graphics" />

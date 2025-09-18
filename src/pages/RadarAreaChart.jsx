@@ -3,7 +3,6 @@ import 'chart.js/auto';
 import { useEffect, useRef, useState } from 'react';
 import { ColorPicker, useColor } from "react-color-palette";
 import "react-color-palette/css"
-import { useNavigate } from 'react-router-dom';
 
 function RadarAreaChart() {
     const [title, setTitle] = useState('Colombia, PISA 2022')
@@ -21,7 +20,6 @@ function RadarAreaChart() {
     const [valuesC, setValuesC] = useState('472\n476\n485')
 
     const chartRef = useRef(null)
-    const navigate = useNavigate()
     const data = {
         labels: labels,
         datasets: [{
@@ -79,7 +77,6 @@ function RadarAreaChart() {
         <div className='radarChart'>
             <div className='Navbar'>
                 <h1 className='titleRadar'>Radar Chart</h1>
-                <button onClick={() => navigate('/')}>Back</button>
             </div>
             <div className='leftSideRadar'>
                 <h2>Make your own graphic</h2>

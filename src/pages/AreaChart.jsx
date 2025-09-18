@@ -3,7 +3,6 @@ import 'chart.js/auto';
 import { useEffect, useRef, useState } from 'react';
 import { ColorPicker, useColor } from "react-color-palette";
 import "react-color-palette/css"
-import { useNavigate } from 'react-router-dom';
 
 function AreaChart() {
     const [title, setTitle] = useState('TRM COP por USD en septiembre del año 2025')
@@ -16,7 +15,6 @@ function AreaChart() {
     const [color, setColor] = useColor("rgb(10, 196, 50, 0.123)");
     const [borderColor, setBorderColor] = useColor("rgba(17, 67, 4, 1)");
     const chartRef = useRef(null)
-    const navigate = useNavigate()
     const data = {
         labels: labels,
         datasets: [{
@@ -72,12 +70,11 @@ function AreaChart() {
 
 
     return (
-        <div className='areaChart'>
+        <div className='areaChart' id='phoneChart'>
             <div className='Navbar'>
                 <h1 className='titleArea'>Area Chart Page</h1>
-                <button onClick={() => navigate('/')}>Back</button>
             </div>
-            <div className='leftSide'>
+            <div className='leftSide' id='phoneSide'>
                 <h2>Make your own graphic</h2>
                 <div className='titleY'>
                     <input type="text" value={titleY} onChange={v => setTitleY(v.target.value)}/>
@@ -85,24 +82,24 @@ function AreaChart() {
                 <div className='titleX'>
                     <input type="text" value={titleX} onChange={v => setTitleX(v.target.value)}/>
                 </div>
-                <div>
+                <div id='labelValueY'>
                     <h4>Values Y-Axis</h4>
                     <textarea value={valuesY} onChange={a => setValuesY(a.target.value)} id="valuesY" />
                 </div>
-                <div>
+                <div id='labelValueX'>
                     <h4>Values X-Axis</h4>
                     <textarea value={valuesX} onChange={a => setValuesX(a.target.value)} id="valuesX" />
                 </div>
-                <div className='background'>
+                <div className='background' id='phoneBackground'>
                     <h4>Background color</h4>
                     <ColorPicker color={color} onChange={setColor} />
                 </div>
-                <div className='line'>
+                <div className='line' id='phoneLine'>
                     <h4>Line color</h4>
                     <ColorPicker color={borderColor} onChange={setBorderColor} />
                 </div>
             </div>
-            <div className='rightSide'>
+            <div className='rightSide' id='upSide'>
                 <input type="text" value={title} onChange={a => update(a.target.value)} />
                 <Line className='areaLine' data={data} options={options} ref={chartRef} />
                 <div className='download'>

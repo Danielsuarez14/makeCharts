@@ -3,7 +3,6 @@ import 'chart.js/auto';
 import { useEffect, useRef, useState } from 'react';
 import { ColorPicker, useColor } from "react-color-palette";
 import "react-color-palette/css"
-import { useNavigate } from 'react-router-dom';
 
 function ScatterChart() {
     const [title, setTitle] = useState('OMS: Peso (kg) vs Talla (cm) — Niños 2–5 años, percentil 50')
@@ -17,7 +16,6 @@ function ScatterChart() {
     const [color, setColor] = useColor("rgba(17, 67, 4, 1)");
 
     const chartRef = useRef(null)
-    const navigate = useNavigate()
     const data = {
         datasets: [{
             label: title,
@@ -87,7 +85,6 @@ function ScatterChart() {
         <div className='areaChart'>
             <div className='Navbar'>
                 <h1 className='titleArea'>Scatter Chart Page</h1>
-                <button onClick={() => navigate('/')}>Back</button>
             </div>
             <div className='leftSide'>
                 <h2>Make your own graphic</h2>

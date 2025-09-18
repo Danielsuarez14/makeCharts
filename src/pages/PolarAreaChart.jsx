@@ -3,7 +3,6 @@ import 'chart.js/auto';
 import { useEffect, useRef, useState } from 'react';
 import { ColorPicker, useColor } from "react-color-palette";
 import "react-color-palette/css"
-import { useNavigate } from 'react-router-dom';
 
 function PolarAreaChart() {
     const [title, setTitle] = useState('Top 5 marcas de automoviles mas vendidas en Colombia(2024)')
@@ -15,7 +14,6 @@ function PolarAreaChart() {
     const [colors, setColors] = useState([])
     const [color, setColor] = useColor("rgba(15, 73, 0, 1)")
     const chartRef = useRef(null)
-    const navigate = useNavigate()
     const data = {
         labels: labels,
         datasets: [{
@@ -59,7 +57,6 @@ function PolarAreaChart() {
         <div className='areaChart'>
             <div className='Navbar'>
                 <h1 className='titleArea'>Polar Area Chart</h1>
-                <button onClick={() => navigate('/')}>Back</button>
             </div>
             <div className='leftSide'>
                 <h2>Make your own graphic</h2>

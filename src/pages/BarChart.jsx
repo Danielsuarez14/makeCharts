@@ -95,7 +95,6 @@ function BarChart() {
         <div className='areaChart'>
             <div className='Navbar'>
                 <h1 className='titleArea'>Bar Chart Page</h1>
-                <button onClick={() => navigate('/')}>Back</button>
             </div>
             <div className='leftSide'>
                 <h2>Make your own graphic</h2>
