@@ -1,9 +1,9 @@
 # Make Charts 📈
 This website was built with Vite, React, ChartJs, use-sound and react-color-palette
 
-Visit it here: https://makecharts.netlify.app/
+Visit it here: [MakeCharts](https://makecharts.netlify.app/)
 
-For now the website is desktop-only, I am working on making it responsive. 🖥️
+This is a responsive website 🖥️ 📱
 
 
 
