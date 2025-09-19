@@ -12,7 +12,7 @@ const [title, setTitle] = useState('TRM COP por USD en septiembre del año 2025'
     const [labels, setLabels] = useState([])
     const [titleY, setTitleY] = useState('Pesos Colombianos')
     const [titleX, setTitleX] = useState('Dias')
-    const [color, setColor] = useColor("rgba(17, 67, 4, 1)");
+    const [color, setColor] = useColor("rgba(17, 67, 4, 1)"); 
 
     const chartRef = useRef(null)
     const data = {
@@ -69,11 +69,11 @@ const [title, setTitle] = useState('TRM COP por USD en septiembre del año 2025'
 
 
     return (
-        <div className='areaChart'>
+        <div className='areaChart'  id='phoneChart'>
             <div className='Navbar'>
-                <h1 className='titleArea'>Line Chart Page</h1>
+                <h1 className='titleArea'>Line Chart</h1>
             </div>
-            <div className='leftSide'>
+            <div className='leftSide' id='phoneSide2'>
                 <h2>Make your own graphic</h2>
                 <div className='titleY'>
                     <input type="text" value={titleY} onChange={v => setTitleY(v.target.value)}/>
@@ -81,22 +81,22 @@ const [title, setTitle] = useState('TRM COP por USD en septiembre del año 2025'
                 <div className='titleX'>
                     <input type="text" value={titleX} onChange={v => setTitleX(v.target.value)}/>
                 </div>
-                <div>
+                <div id='labelValueY2'>
                     <h4>Values Y-Axis</h4>
                     <textarea value={valuesY} onChange={a => setValuesY(a.target.value)} id="valuesY" />
                 </div>
-                <div>
+                <div id='labelValueX2'>
                     <h4>Values X-Axis</h4>
                     <textarea value={valuesX} onChange={a => setValuesX(a.target.value)} id="valuesX" />
-                </div>
-                <div className='backgroundPie'>
+                </div> 
+                <div className='backgroundPie' id='backgroundPhone2'>
                     <div className='colorPicker'>
                         <h4>Line color</h4>
                         <ColorPicker color={color} onChange={setColor} />
                     </div>
                 </div>
-            </div>
-            <div className='rightSide'>
+            </div> 
+            <div className='rightSide' id='upSide'>
                 <input type="text" value={title} onChange={a => update(a.target.value)} />
                 <Line className='areaLine' data={data} options={options} ref={chartRef} />
                 <div className='download'>

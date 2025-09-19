@@ -1,19 +1,23 @@
-@media (max-width: 430px) {
+@media (max-width: 450px) {
     .home {
         grid-template-rows: 0.25fr 0.05fr 1fr;
+        grid-template-columns: 1fr;
         width: 100%;
+        max-width: 450px;
+        justify-items: baseline;
     }
 
     .header {
         grid-row: 1;
         width: 100%;
+        max-width: 430px;
         height: 450px;
         color: #fff;
         background-image: url('./background.png');
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
     }
-
+ 
     .title {
         justify-self: baseline;
         margin-left: 70px;
@@ -21,23 +25,23 @@
     }
 
     .introduce {
+        overflow: visible;
         white-space: pre-wrap;
-        overflow: hidden;
         font-size: 20px;
         color: #fff;
-        margin-left: 10px;
+        justify-self: center;
         height: 100px;
-        width: 400px;
+        width: 100%;
+        max-width: 400px;
+        animation: none;
     }
-
-
 
     .header img {
         width: 200px;
         height: 200px;
         border-radius: 10px;
         border: none;
-        margin-right: 800px;
+        margin-right: 10px;
     }
 
     .header img:hover {
@@ -57,11 +61,12 @@
         display: grid;
         grid-template-columns: 1fr;
         grid-row: 3;
+        width: 100%;
+        max-width: 450px;
         margin-bottom: 50px;
         gap: 20px;
         padding: 10px;
         place-content: center;
-        justify-items: center;
         align-items: center;
     }
 
@@ -77,8 +82,7 @@
         text-align: center;
         justify-items: center;
         margin-bottom: 50px;
-        justify-self: baseline;
-        margin-left: 80px;
+        justify-self: center;
         box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.144);
 
         animation: cardsDown auto linear;
@@ -107,7 +111,7 @@
         border-radius: 10px;
         font-family: "TASA Explorer", sans-serif;
         font-size: 20px;
-    }
+    } 
 
     .card .goButton:hover {
         animation: buttonHover 1s linear both;
@@ -121,7 +125,7 @@
             'Navbar'
             'Upside'
             'PhoneSide';
-        grid-template-rows: 80px 450px;
+        grid-template-rows: 80px 500px 1fr;
         grid-template-columns: 1fr;
         width: 100px;
     }
@@ -142,18 +146,19 @@
         color: #fff;
     }
 
-    #upSide {
+    #upSide { 
         grid-area: UpSide;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 70px 1fr 20px;
         border: none;
         width: 400px;
+        max-width: 450px;
         height: 300px;
         grid-row: 2;
         grid-column: 1;
         margin-top: 10px;
-        justify-items: baseline;
+        justify-self: center;
     }
 
 
@@ -186,7 +191,6 @@
         width: 300px;
         height: 80px;
         justify-self: center;
-        margin-left: 30px;
         background-color: #340658;
         color: #fff;
         font-family: 'TASA Explorer', sans-serif;
@@ -201,7 +205,7 @@
         grid-area: PhoneSide;
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 100px repeat(2, 550px) 1fr 1fr;
+        grid-template-rows: 100px repeat(2, 550px) 30px 1fr 30px 1fr;
         border: none;
         grid-row: 3;
         margin: 0;
@@ -251,13 +255,13 @@
     #phoneSide #labelValueY {
         justify-self: center;
         justify-items: baseline;
-        grid-row: 4;
+        grid-row: 5;
         grid-column: 1;
         padding: 40px;
     }
 
     #phoneSide #labelValueX {
-        grid-row: 5;
+        grid-row: 7;
         grid-column: 1;
         padding: 40px;
     }
@@ -267,37 +271,15 @@
         grid-column: 1;
         justify-self: center;
         margin-right: 30px;
-    }
-
-    #phoneSide .titleY input {
-        width: 300px;
-        height: 40px;
-        border-radius: 10px;
-        text-align: center;
-        background-color: rgb(178, 244, 12, 0.127);
-        font-family: "TASA Explorer", sans-serif;
-        border: none;
-        grid-row: 4;
-        grid-column: 1;
+        margin-bottom: 100px;
     }
 
     .titleX {
-        grid-row: 5;
+        grid-row: 6;
         grid-column: 1;
         justify-self: center;
         margin-right: 30px;
-    }
-
-    .titleX input {
-        width: 300px;
-        height: 40px;
-        border-radius: 10px;
-        text-align: center;
-        background-color: rgb(178, 244, 12, 0.127);
-        font-family: "TASA Explorer", sans-serif;
-        border: none;
-        grid-row: 5;
-        grid-column: 1;
+        margin-bottom: 100px;
     }
 
     #phoneSide #valuesY {
@@ -308,21 +290,15 @@
         resize: none;
         border-radius: 10px;
         margin-right: 0;
-        grid-row: 4;
-        grid-column: 1;
     }
 
     #phoneSide #valuesX {
-        justify-self: center;
-        align-self: center;
         width: 350px;
         height: 200px;
         font-size: 20px;
         font-family: "TASA Explorer", sans-serif;
         resize: none;
         border-radius: 10px;
-        grid-row: 5;
-        grid-column: 1;
     }
 
     .lineBar {
@@ -333,27 +309,30 @@
         grid-row: 3;
     }
 
-    .backgroundPie {
-        margin-top: 10px;
-        display: grid;
+    #backgroundPhone {
+        margin: 0;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 80px 1fr;
-        grid-column: 1/-1;
-        grid-row: 4;
-        margin-bottom: 10px;
+        grid-template-rows: repeat(3, 1fr);
+        grid-row: 2/3;
+        max-width: 400px;
+        width: 100%;
     }
 
-    .backgroundPie button {
-        grid-column: 2;
+    #backgroundPhone .colorPicker {
+        justify-self: center;
+        align-self: center;
+        grid-column: 1;
         grid-row: 1;
-        width: 150px;
-        height: 80px;
-        border-radius: 10px;
-        border: none;
-        background-color: #16048d;
-        color: #fff;
-        font-family: 'TASA Explorer', sans-serif;
-        font-size: 20px;
+        width: 325px;
+        margin-left: 30px;
+    }
+
+    #backgroundPhone button {
+        grid-column: 1;
+        grid-row: 2;
+        align-self: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
     }
 
     .backgroundPie button:hover {
@@ -362,48 +341,131 @@
 
     .backgroundPie .selectChart {
         grid-column: 2;
-        grid-row: 1;
+        grid-row: 2;
         width: 150px;
         height: 80px;
-        margin-left: 200px;
+        justify-self: baseline;
         background-color: #340658;
     }
 
-    .colorPicker {
-        justify-self: center;
-        align-self: center;
+    #textRGB {
+        grid-row: 3;
         grid-column: 1;
-        grid-row: 1/ -1;
-        width: 325px;
+        margin-left: 40px;
     }
-
-    #colorsRGB {
-        justify-self: center;
-        align-self: center;
-        grid-column: 2;
-        grid-row: 2;
-        width: 350px;
-        height: 300px;
-        font-size: 20px;
-        font-family: "TASA Explorer", sans-serif;
-        resize: none;
-        border-radius: 10px;
-    }
-
-
 
     /* Pie Chart */
 
     .downloadPie button {
-        margin-left: 100px;
         border-radius: 10px;
-        width: 500px;
+        width: 300px;
         height: 80px;
         background-color: #340658;
         color: #fff;
         font-family: 'TASA Explorer', sans-serif;
         font-size: 20px;
         margin-top: 30px;
+        margin-left: 35px;
+    }
+
+    /* Line and Scatter charts */
+
+    #phoneSide2 {
+        grid-area: PhoneSide;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px 550px 40px 1fr 40px 1fr;
+        border: none;
+        grid-row: 3;
+        margin: 0;
+    }
+
+    #phoneSide2 h2 {
+        background-color: #16048d;
+        border-radius: 10px;
+        color: #fff;
+        align-self: center;
+        width: 350px;
+        height: 50px;
+        grid-row: 1;
+        justify-self: center;
+        margin-right: 30px;
+    }
+
+    #phoneSide2 h4 {
+        background-color: #b2f40c;
+        border-radius: 10px;
+        color: #1f1f1f;
+        width: 250px;
+        justify-self: center;
+        justify-self: center;
+    }
+
+
+    #labelValueY2 {
+        justify-self: center;
+        justify-items: baseline;
+        grid-row: 4;
+        grid-column: 1;
+        padding: 40px;
+    }
+
+    #labelValueX2 {
+        grid-row: 5;
+        grid-column: 1;
+        padding: 40px;
+    }
+
+    #phoneSide2 .titleY {
+        grid-row: 3;
+        grid-column: 1;
+        justify-self: center;
+        margin-right: 30px;
+        margin-top: 40px;
+    }
+
+    #phoneSide2 .titleX {
+        grid-row: 5;
+        grid-column: 1;
+        justify-self: center;
+        margin-right: 30px;
+    }
+
+    #phoneSide2 #valuesY {
+        width: 350px;
+        height: 200px;
+        font-size: 20px;
+        font-family: "TASA Explorer", sans-serif;
+        resize: none;
+        border-radius: 10px;
+        margin-right: 0;
+    }
+
+    #phoneSide2 #valuesX {
+        width: 350px;
+        height: 200px;
+        font-size: 20px;
+        font-family: "TASA Explorer", sans-serif;
+        resize: none;
+        border-radius: 10px;
+    }
+
+    #backgroundPhone2 {
+        margin: 0;
+        grid-row: 2/4;
+        height: 600px;
+        grid-template-rows: 1fr;
+        max-width: 400px;
+        width: 100%;
+    }
+
+    #backgroundPhone2 .colorPicker {
+        justify-self: center;
+        align-self: center;
+        grid-column: 1;
+        grid-row: 1;
+        width: 325px;
+        margin-left: 45px;
     }
 
 }

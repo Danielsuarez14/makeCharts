@@ -72,7 +72,7 @@ function AreaChart() {
     return (
         <div className='areaChart' id='phoneChart'>
             <div className='Navbar'>
-                <h1 className='titleArea'>Area Chart Page</h1>
+                <h1 className='titleArea'>Area Chart</h1>
             </div>
             <div className='leftSide' id='phoneSide'>
                 <h2>Make your own graphic</h2>
@@ -87,7 +87,7 @@ function AreaChart() {
                     <textarea value={valuesY} onChange={a => setValuesY(a.target.value)} id="valuesY" />
                 </div>
                 <div id='labelValueX'>
-                    <h4>Values X-Axis</h4>
+                    <h4>Values X-Axis</h4> 
                     <textarea value={valuesX} onChange={a => setValuesX(a.target.value)} id="valuesX" />
                 </div>
                 <div className='background' id='phoneBackground'>

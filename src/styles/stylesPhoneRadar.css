@@ -1,0 +1,164 @@
+@media (max-width: 450px) {
+    #phoneChartRadar {
+        display: grid;
+        grid-template-areas:
+            'Navbar'
+            'Upside'
+            'PhoneSideRadar'
+            'Bottom';
+        grid-template-rows: 80px 600px 1fr 1fr;
+        grid-template-columns: 1fr;
+        width: 100px;
+    }
+
+    #phoneSideRadar {
+        grid-area: PhoneSideRadar;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px repeat(2, 550px) repeat(2, 1fr);
+        border: none;
+        grid-row: 3;
+        margin: 0;
+    }
+
+    #phoneSideRadar h2 {
+        background-color: #16048d;
+        border-radius: 10px;
+        color: #fff;
+        align-self: center;
+        width: 350px;
+        height: 50px;
+        grid-row: 1;
+        justify-self: center;
+        margin-right: 30px;
+    }
+
+
+ 
+
+
+
+
+
+
+
+    #phoneSideRadar h4 {
+        background-color: #b2f40c;
+        border-radius: 10px;
+        color: #1f1f1f;
+        width: 250px;
+        justify-self: center;
+        justify-self: center;
+    }
+
+
+    #phoneSideRadar#labelValueY {
+        justify-self: center;
+        justify-items: baseline;
+        grid-row: 5;
+        grid-column: 1;
+        padding: 40px;
+    }
+
+    #phoneSideRadar #labelValueX {
+        grid-row: 7;
+        grid-column: 1;
+        padding: 40px;
+    }
+
+    .titleY {
+        grid-row: 4;
+        grid-column: 1;
+        justify-self: center;
+        margin-right: 30px;
+        margin-bottom: 100px;
+    }
+
+    .titleX {
+        grid-row: 6;
+        grid-column: 1;
+        justify-self: center;
+        margin-right: 30px;
+        margin-bottom: 100px;
+    }
+
+    #phoneSideRadar #valuesY {
+        width: 350px;
+        height: 200px;
+        font-size: 20px;
+        font-family: "TASA Explorer", sans-serif;
+        resize: none;
+        border-radius: 10px;
+        margin-right: 0;
+    }
+
+    #phoneSideRadar #valuesX {
+        width: 350px;
+        height: 200px;
+        font-size: 20px;
+        font-family: "TASA Explorer", sans-serif;
+        resize: none;
+        border-radius: 10px;
+    }
+ 
+    #phoneSideRadar .lineRadar1 {
+        align-self: center;
+        justify-self: center;
+        width: 300px;
+        grid-row: 2;
+        grid-column: 1;
+    }
+
+    #phoneSideRadar .backgroundRadar1 {
+        width: 300px;
+        grid-column: 1;
+        grid-row: 3;
+        align-self: center;
+        justify-self: center;
+    }
+
+    .bottom {
+        grid-area: Bottom;
+        grid-column: 1;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 80px 300px repeat(2, 550px);
+        gap: 20px;
+        justify-items: center;
+        border: none;
+        border-radius: 10px;
+    }
+
+    .title2 {
+        width: 300px;
+        height: 45px;
+        justify-self: center;
+        text-align: center;
+        align-self: center;
+        border-radius: 10px;
+        border: 1px solid #000;
+        grid-row: 1;
+        grid-column: 1;
+    }
+
+    .bottom h4 {
+        background-color: #b2f40c;
+        border-radius: 10px;
+        color: #1f1f1f;
+        width: 250px;
+        height: 20px;
+        justify-self: center;
+        text-align: center;
+        grid-row: 2;
+    }
+
+    .backgroundRadar2 {
+        width: 325px;
+        grid-row: 3;
+    }
+
+    .lineRadar2 {
+        width: 325px;
+        grid-row: 4;
+    }
+}

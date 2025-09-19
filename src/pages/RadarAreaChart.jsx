@@ -74,11 +74,11 @@ function RadarAreaChart() {
 
 
     return (
-        <div className='radarChart'>
+        <div className='radarChart' id='phoneChartRadar'>
             <div className='Navbar'>
-                <h1 className='titleRadar'>Radar Chart</h1>
+                <h1 className='titleRadar'>Radar Chart</h1> 
             </div>
-            <div className='leftSideRadar'>
+            <div className='leftSideRadar' id='phoneSideRadar'>
                 <h2>Make your own graphic</h2>
                 <div>
                     <h4>Values</h4>
@@ -97,7 +97,7 @@ function RadarAreaChart() {
                     <ColorPicker color={borderColor} onChange={setBorderColor} />
                 </div>
             </div>
-            <div className='rightSideRadar'>
+            <div className='rightSideRadar' id='upSide'>
                 <input type="text" value={title} onChange={a => update(a.target.value)} />
                 <Radar data={data} options={options} ref={chartRef} />
                 <div className='downloadPie'>

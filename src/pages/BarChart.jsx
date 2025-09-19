@@ -80,7 +80,7 @@ function BarChart() {
             }
 
         }
-        setColors(newList)
+        setColors(newList) 
     }
 
     useEffect(() => {
@@ -92,11 +92,11 @@ function BarChart() {
 
 
     return (
-        <div className='areaChart'>
+        <div className='areaChart' id='phoneChart'>
             <div className='Navbar'>
-                <h1 className='titleArea'>Bar Chart Page</h1>
+                <h1 className='titleArea'>Bar Chart</h1>
             </div>
-            <div className='leftSide'>
+            <div className='leftSide' id='phoneSide'>
                 <h2>Make your own graphic</h2>
                 <div className='titleY'>
                     <input type="text" value={titleY} onChange={v => setTitleY(v.target.value)}/>
@@ -104,29 +104,29 @@ function BarChart() {
                 <div className='titleX'>
                     <input type="text" value={titleX} onChange={v => setTitleX(v.target.value)}/>
                 </div>
-                <div>
+                <div id='labelValueY'>
                     <h4>Values Y-Axis</h4>
                     <textarea value={valuesY} onChange={a => setValuesY(a.target.value)} id="valuesY" />
                 </div>
-                <div>
+                <div id='labelValueX'>
                     <h4>Values X-Axis</h4>
                     <textarea value={valuesX} onChange={a => setValuesX(a.target.value)} id="valuesX" />
                 </div>
-                <div className='backgroundPie'>
+                <div className='backgroundPie' id='backgroundPhone'>
                     <div className='colorPicker'>
                         <h4>Line color</h4>
                         <ColorPicker color={borderColor} onChange={setBorderColor} />
                     </div>
                     <button onClick={() => setValuesBorder(prev => `${prev}\n${`rgba(${Math.round(borderColor.rgb.r)}, ${Math.round(borderColor.rgb.g)}, ${Math.round(borderColor.rgb.b)}, ${Math.round(borderColor.rgb.a)})`}`)}
                     >Put Color</button>
-                    <div>
+                    <div id='textRGB'>
                         <h4>Colors RGB</h4>
                         <textarea value={valuesBorder} onChange={a => setValuesBorder(a.target.value)} id="colorsRGB" />
                     </div>
 
                 </div>
             </div>
-            <div className='rightSide'>
+            <div className='rightSide' id='upSide'>
                 <input type="text" value={title} onChange={a => update(a.target.value)} />
                 <Bar redraw className='areaLine' data={data} options={options} ref={chartRef} />
                 <div className='download'>

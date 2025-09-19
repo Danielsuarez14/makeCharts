@@ -55,21 +55,21 @@ function PieChart() {
 
 
     return (
-        <div className='areaChart'>
+        <div className='areaChart' id='phoneChart'>
             <div className='Navbar'>
-                <h1 className='titleArea'>Pie and Doughnut Chart Page</h1>
+                <h1 className='titleArea'>Pie and Doughnut Chart</h1>
             </div>
-            <div className='leftSide'>
+            <div className='leftSide' id='phoneSide'>
                 <h2>Make your own graphic</h2>
-                <div>
+                <div id='labelValueY'>
                     <h4>Values</h4>
                     <textarea value={valuesY} onChange={a => setValuesY(a.target.value)} id="valuesY" />
                 </div>
-                <div>
+                <div id='labelValueX'>
                     <h4>Labels</h4>
                     <textarea value={valuesX} onChange={a => setValuesX(a.target.value)} id="valuesX" />
                 </div>
-                <div className='backgroundPie'>
+                <div className='backgroundPie' id='backgroundPhone'>
                     <div className='colorPicker'>
                         <h4>Line color</h4>
                         <ColorPicker color={color} onChange={setColor} />
@@ -77,14 +77,14 @@ function PieChart() {
                     <button onClick={() => setPie(!pie)} className='selectChart'>{pie ? 'Doughnut' : 'Pie'}</button>
                     <button onClick={() => setValuesColor(prev => `${prev}\n${`rgba(${Math.round(color.rgb.r)}, ${Math.round(color.rgb.g)}, ${Math.round(color.rgb.b)}, ${Math.round(color.rgb.a)})`}`)}
                     >Put Color</button>
-                    <div>
+                    <div id='textRGB'>
                         <h4>Colors RGB</h4>
                         <textarea value={valuesColor} onChange={a => setValuesColor(a.target.value)} id="colorsRGB" />
                     </div>
-
+ 
                 </div>
             </div>
-            <div className='rightSide'>
+            <div className='rightSide' id='upSide'>
                 <input type="text" value={title} onChange={a => update(a.target.value)} />
                 {pie && (
                     <Pie className='pieChart' data={data} options={options} ref={chartRef} />
