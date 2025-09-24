@@ -3,7 +3,6 @@ import 'chart.js/auto';
 import { useEffect, useRef, useState } from 'react';
 import { ColorPicker, useColor } from "react-color-palette";
 import "react-color-palette/css"
-import { useNavigate } from 'react-router-dom';
 
 function BarChart() {
     const [title, setTitle] = useState('Top 10 marcas de automoviles mas vendidas en Colombia(2024)')
@@ -19,7 +18,6 @@ function BarChart() {
     const [borderColor, setBorderColor] = useColor("rgb(15, 73, 0)");
 
     const chartRef = useRef(null)
-    const navigate = useNavigate()
     const data = {
         labels: labels,
         datasets: [{
