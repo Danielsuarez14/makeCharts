@@ -80,7 +80,7 @@ function BarChart() {
             }
 
         }
-        setColors(newList) 
+        setColors(newList)
     }
 
     useEffect(() => {
@@ -99,10 +99,10 @@ function BarChart() {
             <div className='leftSide' id='phoneSide'>
                 <h2>Make your own graphic</h2>
                 <div className='titleY'>
-                    <input type="text" value={titleY} onChange={v => setTitleY(v.target.value)}/>
+                    <input type="text" value={titleY} onChange={v => setTitleY(v.target.value)} />
                 </div>
                 <div className='titleX'>
-                    <input type="text" value={titleX} onChange={v => setTitleX(v.target.value)}/>
+                    <input type="text" value={titleX} onChange={v => setTitleX(v.target.value)} />
                 </div>
                 <div id='labelValueY'>
                     <h4>Values Y-Axis</h4>
@@ -115,7 +115,9 @@ function BarChart() {
                 <div className='backgroundPie' id='backgroundPhone'>
                     <div className='colorPicker'>
                         <h4>Line color</h4>
-                        <ColorPicker color={borderColor} onChange={setBorderColor} />
+                        <div translate='no'>
+                            <ColorPicker color={borderColor} onChange={setBorderColor} />
+                        </div>
                     </div>
                     <button onClick={() => setValuesBorder(prev => `${prev}\n${`rgba(${Math.round(borderColor.rgb.r)}, ${Math.round(borderColor.rgb.g)}, ${Math.round(borderColor.rgb.b)}, ${Math.round(borderColor.rgb.a)})`}`)}
                     >Put Color</button>

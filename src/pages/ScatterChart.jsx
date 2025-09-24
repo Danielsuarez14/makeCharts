@@ -27,7 +27,7 @@ function ScatterChart() {
         interaction: {
             mode: 'index',
             intersect: true,
-        },scales: {
+        }, scales: {
             y: {
                 title: {
                     display: true,
@@ -60,14 +60,14 @@ function ScatterChart() {
 
     const makePairs = () => {
         let dictionary = {}
-        if(labels.length === values.length){
-            for (let i = 0; i <= values.length - 1; i++){
-            dictionary = {'x': parseFloat(labels[i]), 'y': parseFloat(values[i])}
-            pairs.push(dictionary)
+        if (labels.length === values.length) {
+            for (let i = 0; i <= values.length - 1; i++) {
+                dictionary = { 'x': parseFloat(labels[i]), 'y': parseFloat(values[i]) }
+                pairs.push(dictionary)
+            }
+            return pairs
         }
-        return pairs
-        }
-        
+
     }
 
 
@@ -76,9 +76,9 @@ function ScatterChart() {
         setLabels(valuesX.split('\n').filter(l => l !== ''))
     }, [valuesY, valuesX, color])
 
-    useEffect (() => {
+    useEffect(() => {
         makePairs()
-    },[labels, values])
+    }, [labels, values])
 
 
     return (
@@ -89,10 +89,10 @@ function ScatterChart() {
             <div className='leftSide' id='phoneSide2'>
                 <h2>Make your own graphic</h2>
                 <div className='titleY'>
-                    <input type="text" value={titleY} onChange={v => setTitleY(v.target.value)}/>
+                    <input type="text" value={titleY} onChange={v => setTitleY(v.target.value)} />
                 </div>
                 <div className='titleX'>
-                    <input type="text" value={titleX} onChange={v => setTitleX(v.target.value)}/>
+                    <input type="text" value={titleX} onChange={v => setTitleX(v.target.value)} />
                 </div>
                 <div id='labelValueY2'>
                     <h4>Values Y-Axis</h4>
@@ -105,7 +105,9 @@ function ScatterChart() {
                 <div className='backgroundPie' id='backgroundPhone2'>
                     <div className='colorPicker'>
                         <h4>Point color</h4>
-                        <ColorPicker color={color} onChange={setColor} />
+                        <div translate='no'>
+                            <ColorPicker color={color} onChange={setColor} />
+                        </div>
                     </div>
                 </div>
             </div>

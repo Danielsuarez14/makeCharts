@@ -1,4 +1,4 @@
-import {PolarArea } from 'react-chartjs-2';
+import { PolarArea } from 'react-chartjs-2';
 import 'chart.js/auto';
 import { useEffect, useRef, useState } from 'react';
 import { ColorPicker, useColor } from "react-color-palette";
@@ -10,7 +10,7 @@ function PolarAreaChart() {
     const [valuesX, setValuesX] = useState('Toyota\nRenault\nKia\nChevrolet\nMazda')
     const [valuesColor, setValuesColor] = useState('rgba(235, 10, 30, 1)\nrgba(255, 209, 0, 1)\nrgba(200, 16, 46, 1)\nrgba(204, 158, 47, 1)\nrgba(33, 33, 33, 1)')
     const [values, setValues] = useState([])
-    const [labels, setLabels] = useState([]) 
+    const [labels, setLabels] = useState([])
     const [colors, setColors] = useState([])
     const [color, setColor] = useColor("rgba(15, 73, 0, 1)")
     const chartRef = useRef(null)
@@ -71,7 +71,9 @@ function PolarAreaChart() {
                 <div className='backgroundPie' id='backgroundPhone'>
                     <div className='colorPicker'>
                         <h4>Line color</h4>
-                        <ColorPicker color={color} onChange={setColor} />
+                        <div translate='no'>
+                            <ColorPicker color={color} onChange={setColor} />
+                        </div>
                     </div>
                     <button onClick={() => setValuesColor(prev => `${prev}\n${`rgba(${Math.round(color.rgb.r)}, ${Math.round(color.rgb.g)}, ${Math.round(color.rgb.b)}, ${Math.round(color.rgb.a)})`}`)}
                     >Put Color</button>
@@ -84,7 +86,7 @@ function PolarAreaChart() {
             </div>
             <div className='rightSide' id='upSide'>
                 <input type="text" value={title} onChange={a => update(a.target.value)} />
-                    <PolarArea data={data} options={options} ref={chartRef} />
+                <PolarArea data={data} options={options} ref={chartRef} />
                 <div className='downloadPie'>
                     <button onClick={() => createImage()}>Download</button>
                 </div>

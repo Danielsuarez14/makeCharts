@@ -77,26 +77,30 @@ function AreaChart() {
             <div className='leftSide' id='phoneSide'>
                 <h2>Make your own graphic</h2>
                 <div className='titleY'>
-                    <input type="text" value={titleY} onChange={v => setTitleY(v.target.value)}/>
+                    <input type="text" value={titleY} onChange={v => setTitleY(v.target.value)} />
                 </div>
                 <div className='titleX'>
-                    <input type="text" value={titleX} onChange={v => setTitleX(v.target.value)}/>
+                    <input type="text" value={titleX} onChange={v => setTitleX(v.target.value)} />
                 </div>
                 <div id='labelValueY'>
                     <h4>Values Y-Axis</h4>
                     <textarea value={valuesY} onChange={a => setValuesY(a.target.value)} id="valuesY" />
                 </div>
                 <div id='labelValueX'>
-                    <h4>Values X-Axis</h4> 
+                    <h4>Values X-Axis</h4>
                     <textarea value={valuesX} onChange={a => setValuesX(a.target.value)} id="valuesX" />
                 </div>
                 <div className='background' id='phoneBackground'>
                     <h4>Background color</h4>
-                    <ColorPicker color={color} onChange={setColor} />
+                    <div translate='no'>
+                        <ColorPicker color={color} onChange={setColor} />
+                    </div>
                 </div>
                 <div className='line' id='phoneLine'>
                     <h4>Line color</h4>
-                    <ColorPicker color={borderColor} onChange={setBorderColor} />
+                    <div translate='no'>
+                        <ColorPicker color={borderColor} onChange={setBorderColor} />
+                    </div>
                 </div>
             </div>
             <div className='rightSide' id='upSide'>

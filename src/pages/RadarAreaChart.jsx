@@ -76,7 +76,7 @@ function RadarAreaChart() {
     return (
         <div className='radarChart' id='phoneChartRadar'>
             <div className='Navbar'>
-                <h1 className='titleRadar'>Radar Chart</h1> 
+                <h1 className='titleRadar'>Radar Chart</h1>
             </div>
             <div className='leftSideRadar' id='phoneSideRadar'>
                 <h2>Make your own graphic</h2>
@@ -90,11 +90,15 @@ function RadarAreaChart() {
                 </div>
                 <div className='backgroundRadar1'>
                     <h4>Background color</h4>
-                    <ColorPicker color={color} onChange={setColor} />
+                    <div translate='no'>
+                        <ColorPicker color={color} onChange={setColor} />
+                    </div>
                 </div>
                 <div className='lineRadar1'>
                     <h4>Line color</h4>
-                    <ColorPicker color={borderColor} onChange={setBorderColor} />
+                    <div translate='no'>
+                        <ColorPicker color={borderColor} onChange={setBorderColor} />
+                    </div>
                 </div>
             </div>
             <div className='rightSideRadar' id='upSide'>
@@ -106,21 +110,25 @@ function RadarAreaChart() {
 
             </div>
             <div className='bottom'>
-                <input type="text"  className={'title2'} value={title2} onChange={a => setTitle2(a.target.value)} />
+                <input type="text" className={'title2'} value={title2} onChange={a => setTitle2(a.target.value)} />
                 <div>
                     <h4>Values 2</h4>
                     <textarea value={valuesC} onChange={a => setValuesC(a.target.value)} id="valuesY" />
                 </div>
                 <div className='backgroundRadar2'>
                     <h4>Background color 2</h4>
-                    <ColorPicker color={color2} onChange={setColor2} />
+                    <div translate='no'>
+                        <ColorPicker color={color2} onChange={setColor2} />
+                    </div>
                 </div>
                 <div className='lineRadar2'>
                     <h4>Line color 2</h4>
-                    <ColorPicker color={borderColor2} onChange={setBorderColor2} />
+                    <div translate='no'>
+                        <ColorPicker color={borderColor2} onChange={setBorderColor2} />
+                    </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 

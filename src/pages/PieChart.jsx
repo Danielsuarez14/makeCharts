@@ -72,7 +72,9 @@ function PieChart() {
                 <div className='backgroundPie' id='backgroundPhone'>
                     <div className='colorPicker'>
                         <h4>Line color</h4>
-                        <ColorPicker color={color} onChange={setColor} />
+                        <div translate='no'>
+                            <ColorPicker color={color} onChange={setColor} />
+                        </div>
                     </div>
                     <button onClick={() => setPie(!pie)} className='selectChart'>{pie ? 'Doughnut' : 'Pie'}</button>
                     <button onClick={() => setValuesColor(prev => `${prev}\n${`rgba(${Math.round(color.rgb.r)}, ${Math.round(color.rgb.g)}, ${Math.round(color.rgb.b)}, ${Math.round(color.rgb.a)})`}`)}
@@ -81,7 +83,7 @@ function PieChart() {
                         <h4>Colors RGB</h4>
                         <textarea value={valuesColor} onChange={a => setValuesColor(a.target.value)} id="colorsRGB" />
                     </div>
- 
+
                 </div>
             </div>
             <div className='rightSide' id='upSide'>
